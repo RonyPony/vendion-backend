@@ -8,10 +8,12 @@ namespace vendio_backend.Dtos
     {
         [Required]
         [DisplayName("User name")]
+        [DataType(DataType.Text)]
         public string UserName { get; set; }
 
         [Required]
         [DisplayName("Lastname")]
+        [DataType(DataType.Text)]
         public string lastName { get; set; }
 
         [Required]

@@ -157,20 +157,22 @@ namespace vendio_backend.Controllers
                 return Problem("Entity set 'vendionContext.Users'  is null.");
             }
             var users = (from x in _context.Users
-                         where x.email == userLogin.UserEmail
+                         where x.email == userLogin.email
                          where x.Password == userLogin.Password
 
                          select x).FirstOrDefault();
 
             int userId = 0;
 
-            if (!users.isEnabled)
-            {
-                return StatusCode(StatusCodes.Status423Locked, "Current User (" + users.email + ") is locked by the admin, we will review your account just to make sure, keep an eye on your email inbox, or contact us");
-            }
+            
 
             if (users != null)
             {
+                if (!users.isEnabled)
+                {
+                    return StatusCode(StatusCodes.Status423Locked, "Current User (" + users.email + ") is locked by the admin, we will review your account just to make sure, keep an eye on your email inbox, or contact us");
+                }
+
                 userId = users.id;
             }
             else

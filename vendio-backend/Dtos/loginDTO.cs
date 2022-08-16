@@ -8,7 +8,8 @@ namespace vendio_backend.Dtos
     {
             [Required]
             [DisplayName("User email")]
-            public string UserEmail { get; set; }
+            [DataType(DataType.EmailAddress)]
+            public string email { get; set; }
 
             [Required]
             [DataType(DataType.Password)]

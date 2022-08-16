@@ -10,14 +10,15 @@ namespace datingAppBackend.Models
         public int id { get; set; }
 
         [Required]
+        
         public int countryId { get; set; }
 
         public bool isEnabled { get; set; }
 
         public bool showNumber { get; set; }
-
+        [DataType(DataType.PhoneNumber)]
         public string phoneNumber { get; set; }
-
+        [DataType(DataType.Date)]
         public DateTime bornDate { get; set; }
 
 
@@ -38,7 +39,7 @@ namespace datingAppBackend.Models
         public string bio { get; set; }
 
         [Required]
-        [DataType(DataType.Text)]
+        [DataType(DataType.EmailAddress)]
         [DisplayName("Email Address")]
         public string email { get; set; }
 
@@ -48,9 +49,11 @@ namespace datingAppBackend.Models
         public string Password { get; set; }
 
         [DisplayName("Fecha de registro")]
+        [DataType(DataType.DateTime)]
         public DateTime registerDate { get; set; }
 
         [DisplayName("Fecha de login")]
+        [DataType(DataType.DateTime)]
         public DateTime lastLogin { get; set; }
 
     }
