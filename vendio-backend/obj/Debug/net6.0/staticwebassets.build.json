@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "78FQSf5H5PkKkTRkekWGfpjrL+Q7bewPd5xy4ZEcTrE=",
+  "Source": "vendio-backend",
+  "BasePath": "_content/vendio-backend",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
