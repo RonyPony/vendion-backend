@@ -10,7 +10,7 @@ namespace datingAppBackend.Models
         [DataType(DataType.Text)]
         public string Name { get; set; }
         public byte[] Image { get; set; }
-        
+        public bool isProductPicture { get; set; }
         public int productId { get; set; }
         [DataType(DataType.DateTime)]
         public DateTime CreatedAt { get; set; }
