@@ -1,13 +1,24 @@
 ﻿<Properties StartupConfiguration="{DD6D58F1-D6FE-4671-80DC-8CD91DC3AADE}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="vendio-backend/Program.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="vendio-backend/Controllers/photosController.cs">
     <Files>
-      <File FileName="vendio-backend/Program.cs" Line="29" Column="22" />
+      <File FileName="vendio-backend/Program.cs" Line="34" Column="1" />
+      <File FileName="vendio-backend/Controllers/photosController.cs" Line="82" Column="16" />
+      <File FileName="vendio-backend/Controllers/UserController.cs" Line="14" Column="40" />
+      <File FileName="vendio-backend/Models/photo.cs" Line="13" Column="51" />
+      <File FileName="vendio-backend/Models/vendionContext.cs" Line="16" Column="57" />
+      <File FileName="../MobileDatingApp-BackEnd/datingAppBackend/datingAppBackend/Models/Photo.cs" Line="11" Column="37" />
+      <File FileName="vendio-backend/Models/PhotoToRegister.cs" Line="7" Column="27" />
+      <File FileName="vendio-backend/Controllers/vehicleController.cs" Line="19" Column="10" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="vendio-backend" expanded="True">
-            <Node name="vendio-backend" expanded="True" />
+            <Node name="vendio-backend" expanded="True">
+              <Node name="Controllers" expanded="True" />
+              <Node name="Models" expanded="True" />
+            </Node>
           </Node>
         </State>
       </Pad>
@@ -16,11 +27,10 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.ItemProperties.vendio-backend PreferredExecutionTarget="/Applications/Safari.app" FirstBuild="True" />
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.vendio-backend PreferredExecutionTarget="/Applications/Safari.app" />
 </Properties>

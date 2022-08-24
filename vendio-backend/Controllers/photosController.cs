@@ -72,7 +72,7 @@ namespace vendio_backend.Controllers
             }
         }
 
-        [HttpGet("{vehicleId}")]
+        [HttpGet("byVehicle/{vehicleId}")]
         public async Task<IActionResult> GetVehiclePicture(int vehicleId)
         {
             if (vehicleId==null)
@@ -83,6 +83,10 @@ namespace vendio_backend.Controllers
             {
                 //IEnumerable<Photo> photos = await _photoService.GetPhotosByUserId(userId);
                 Photo? photo = await _context.photos.OrderByDescending(r => r.CreatedAt).Where(r => r.productId == vehicleId && r.isProductPicture).FirstOrDefaultAsync();
+                if (photo ==null)
+                {
+                    return NotFound("No product picture found");
+                }
                 return Ok(photo);
             }
             catch (Exception e)
