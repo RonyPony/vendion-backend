@@ -57,13 +57,13 @@ namespace vendio_backend.Controllers
             }
         }
 
-        [HttpGet("gallery")]
-        public async Task<IActionResult> GetVehiclePhoto([FromQuery] int vehicleId)
+        [HttpGet("gallery/{vehicleId}")]
+        public async Task<IActionResult> GetVehiclePhoto(int vehicleId)
         {
             try
             {
                 //IEnumerable<Photo> photos = await _photoService.GetPhotosByUserId(userId);
-                IEnumerable<Photo> photos = await _context.photos.Where(r=>r.productId == vehicleId && r.isProductPicture==false).ToListAsync();
+                IEnumerable<Photo> photos = await _context.photos.Where(r=>r.productId == vehicleId).ToListAsync();
                 return Ok(photos);
             }
             catch (Exception e)
