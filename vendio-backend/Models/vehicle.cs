@@ -12,6 +12,8 @@ namespace vendio_backend.Models
 
         public bool isEnabled { get; set; }
         public bool isPublished { get; set; }
+        [DefaultValue(false)]
+        public bool isOffer { get; set; }
 
         public List<String> features { get; set; }
 

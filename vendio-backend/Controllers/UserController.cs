@@ -145,6 +145,34 @@ namespace vendio_backend.Controllers
             }
         }
 
+        [HttpPost]
+        [Route("addVehicleToFav/{userId}/{vehicleId}")]
+        public async Task<ActionResult<User>> addVehicleToFav(int userId,int vehicleId)
+        {
+            if (userId == null || userId==0 || vehicleId == null || vehicleId == 0)
+            {
+                return BadRequest("Please provide all the info");
+            }
+
+            try
+            {
+                var user = (from x in _context.Users
+                            where x.id == userId &&
+                            x.isEnabled
+                            select x).FirstOrDefault();
+                if (user == null)
+                {
+                    return NotFound("User not found");
+                }
+
+                return Ok(user);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError);
+            }
+        }
+
         // POST: api/login
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
