@@ -29,6 +29,17 @@ namespace vendio_backend.Controllers
             return await _context.Vehicles.Where(e => e.isEnabled == true).ToListAsync();
         }
 
+        // GET: api/vehicle/offer
+        [HttpGet("offer")]
+        public async Task<ActionResult<IEnumerable<vehicle>>> GetOffer()
+        {
+            if (_context.Vehicles == null)
+            {
+                return NotFound();
+            }
+            return await _context.Vehicles.Where(e => e.isEnabled == true && e.isOffer).ToListAsync();
+        }
+
         // GET: api/vehicle/5
         [HttpGet("{id}")]
         public async Task<ActionResult<vehicle>> Getvehicle(int id)
