@@ -29,6 +29,18 @@ namespace vendio_backend.Controllers
             return await _context.Vehicles.Where(e => e.isEnabled == true).ToListAsync();
         }
 
+        // GET: api/FavVehicles
+        [HttpGet]
+        [Route("getFavorites/{userId}")]
+        public async Task<ActionResult<IEnumerable<favoriteVehiclesMapping>>> GetFavVehicles(int userId)
+        {
+            if (_context.Vehicles == null)
+            {
+                return NotFound();
+            }
+            return await _context.favoritesMapping.Where(e=>e.userId==userId).ToListAsync();
+        }
+
         // GET: api/vehicle/offer
         [HttpGet("offer")]
         public async Task<ActionResult<IEnumerable<vehicle>>> GetOffer()
@@ -178,6 +190,93 @@ namespace vendio_backend.Controllers
             else
             {
                 return BadRequest("Provide ID");
+            }
+
+
+        }
+
+
+        // POST: api/addFavorite/1/1
+        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        [HttpPost]
+        [Route("addFavorite/{carId}/{userId}")]
+        public async Task<ActionResult<vehicle>> addFavorite(int carId,int userId)
+        {
+
+            if (_context.Vehicles == null)
+            {
+                return Problem("Entity set 'vendionContext.vehicles'  is null.");
+            }
+
+
+            if (carId != null && userId!=null)
+            {
+                List<favoriteVehiclesMapping> has = await _context.favoritesMapping.Where(e=>e.userId ==userId && e.vehicleId ==carId).ToListAsync();
+                if (has.Count>=1)
+                {
+                    return Ok("this vehicle is already in favorites");
+                }
+                else
+                {
+                    vehicle vehicle = await _context.Vehicles.FindAsync(carId);
+                    User user = await _context.Users.FindAsync(userId);
+                    favoriteVehiclesMapping fav = new favoriteVehiclesMapping();
+                    fav.userId = user.id;
+                    fav.vehicleId = vehicle.id;
+                    fav.CreatedAt = DateTime.UtcNow;
+                    _context.favoritesMapping.AddAsync(fav);
+                    await _context.SaveChangesAsync();
+                    return Ok(fav);
+                }
+
+                return NotFound();
+            }
+            else
+            {
+                return BadRequest("Provide the correct info");
+            }
+
+
+        }
+
+
+        // POST: api/removeFavorite/1/1
+        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        [HttpPost]
+        [Route("removeFavorite/{carId}/{userId}")]
+        public async Task<ActionResult<vehicle>> removeFavorite(int carId, int userId)
+        {
+
+            if (_context.Vehicles == null)
+            {
+                return Problem("Entity set 'vendionContext.vehicles'  is null.");
+            }
+
+
+            if (carId != null && userId != null)
+            {
+                List<favoriteVehiclesMapping> has = await _context.favoritesMapping.Where(e => e.userId == userId && e.vehicleId == carId).ToListAsync();
+                if (has.Count >= 1)
+                {
+                    foreach (var item in has)   
+                    {
+                        _context.favoritesMapping.Remove(item);
+                        _context.SaveChanges();
+                    }
+                    
+                    return Ok("Removed Successfully");
+                }
+                else
+                {
+                    return Ok("this vehicle is not in favorites");
+                    
+                }
+
+                return NotFound();
+            }
+            else
+            {
+                return BadRequest("Provide the correct info");
             }
 
 

@@ -14,6 +14,7 @@ namespace vendio_backend.Models
         public DbSet<User> Users { get; set; } = null;
         public DbSet<vehicle> Vehicles { get; set; } = null;
         public DbSet<Photo> photos { get; set; } = null;
+        public DbSet<favoriteVehiclesMapping> favoritesMapping { get; set; } = null;
     }
 }
 
