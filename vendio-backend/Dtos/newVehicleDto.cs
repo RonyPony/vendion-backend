@@ -40,7 +40,6 @@ namespace vendio_backend.Dtos
         [DisplayName("Year")]
         public string year { get; set; }
 
-        [Required]
         [DataType(DataType.Text)]
         [DisplayName("vim no.")]
         public string vim { get; set; }
