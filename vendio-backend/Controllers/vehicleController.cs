@@ -104,7 +104,7 @@ namespace vendio_backend.Controllers
         // POST: api/vehicle
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<vehicle>> Postvehicle(vehicle vehicleRegister)
+        public async Task<ActionResult<vehicle>> Postvehicle(newVehicleDto vehicleRegister)
         {
             if (_context.Vehicles == null)
             {
@@ -117,11 +117,28 @@ namespace vendio_backend.Controllers
             //bool emailExists = vehiclesFound.Count <= 0;
             //if (emailExists)
             //{
-                
-                _context.Vehicles.Add(vehicleRegister);
+            vehicle vehicle = new vehicle();
+            vehicle.brand = vehicleRegister.brand;
+            vehicle.condition = vehicleRegister.condition;
+            vehicle.contactPhoneNumber = vehicleRegister.contactPhoneNumber;
+            vehicle.createdBy = vehicleRegister.createdBy;
+            vehicle.description = vehicleRegister.description;
+            vehicle.features = vehicleRegister.features;
+            vehicle.model = vehicleRegister.model;
+            vehicle.name = vehicleRegister.name;
+            vehicle.price = vehicleRegister.price;
+            vehicle.vim = vehicleRegister.vim;
+            vehicle.year = vehicleRegister.year;
+            vehicle.isEnabled = true;
+            vehicle.isOffer = false ;
+            vehicle.isPublished = true;
+            vehicle.modificationDate = DateTime.Now;
+            vehicle.registerDate = DateTime.Now;
+
+            _context.Vehicles.Add(vehicle);
                 await _context.SaveChangesAsync();
 
-                return CreatedAtAction("Getvehicle", new { id = vehicleRegister.id }, vehicleRegister);
+                return CreatedAtAction("Getvehicle", new { id = vehicle.id }, vehicle);
             //}
             //else
             //{

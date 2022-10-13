@@ -2,18 +2,12 @@
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
-namespace vendio_backend.Models
+namespace vendio_backend.Dtos
 {
-    public class vehicle
+    public class newVehicleDto
     {
-        [Key]
-        public int id { get; set; }
+        
         public int createdBy { get; set; }
-
-        public bool isEnabled { get; set; }
-        public bool isPublished { get; set; }
-        [DefaultValue(false)]
-        public bool isOffer { get; set; }
 
         public List<String> features { get; set; }
 
@@ -32,14 +26,6 @@ namespace vendio_backend.Models
         [DisplayName("Description")]
         public string description { get; set; }
 
-        [DisplayName("Fecha de creacion")]
-        [DataType(DataType.DateTime)]
-        public DateTime registerDate { get; set; }
-
-        [DisplayName("Fecha de modificacion")]
-        [DataType(DataType.DateTime)]
-        public DateTime modificationDate { get; set; }
-
         [Required]
         [DataType(DataType.Text)]
         [DisplayName("Brand")]
@@ -50,7 +36,7 @@ namespace vendio_backend.Models
         [DisplayName("Model")]
         public string model { get; set; }
 
-        [Required]        
+        [Required]
         [DisplayName("Year")]
         public string year { get; set; }
 
@@ -62,8 +48,6 @@ namespace vendio_backend.Models
         [Required]
         [DisplayName("Condition")]
         public string condition { get; set; }
-
-
     }
 }
 
