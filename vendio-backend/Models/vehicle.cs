@@ -33,7 +33,7 @@ namespace vendio_backend.Models
         public string description { get; set; }
 
         [DisplayName("Fecha de creacion")]
-        public DateTime registerDate { get; set; }
+        public String registerDate { get; set; }
 
         [DisplayName("Fecha de modificacion")]
         [DataType(DataType.DateTime)]
