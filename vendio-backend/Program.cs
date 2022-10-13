@@ -2,7 +2,7 @@
 using vendio_backend.Models;
 
 var builder = WebApplication.CreateBuilder(args);
-
+AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
 // Add services to the container.
 
 builder.Services.AddControllers();
@@ -11,7 +11,9 @@ builder.Services.AddDbContext<vendionContext>(opt =>
 {
     //opt.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnections"));
     opt.UseNpgsql(builder.Configuration.GetConnectionString("postgres"));
+   
 });
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
