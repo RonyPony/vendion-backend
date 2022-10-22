@@ -57,6 +57,34 @@ namespace vendio_backend.Controllers
             }
         }
 
+        [HttpPost("makeProductPicture/{photoId}")]
+        public async Task<IActionResult> SetAsPresentationPicture(int photoId)
+        {
+            try
+            {
+                Photo foto = await _context.photos.FindAsync(photoId);
+                IEnumerable<Photo> listaPhotos = await _context.photos.Where(e => e.Id == photoId && e.isProductPicture == true).ToListAsync();
+                foreach (Photo ft in listaPhotos)
+                {
+                    ft.isProductPicture = false;
+                    _context.photos.Update(ft);
+                    _context.SaveChangesAsync();
+                }
+                if (foto==null)
+                {
+                    return NotFound();
+                }
+                foto.isProductPicture = true;
+                _context.SaveChanges();
+                return Ok(foto);
+                
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500,ex.Message);
+            }
+        }
+
         [HttpGet("gallery/{vehicleId}")]
         public async Task<IActionResult> GetVehiclePhoto(int vehicleId)
         {
