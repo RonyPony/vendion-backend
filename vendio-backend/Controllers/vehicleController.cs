@@ -9,7 +9,7 @@ namespace vendio_backend.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class vehicleController:ControllerBase
+    public class vehicleController : ControllerBase
     {
         private readonly vendionContext _context;
 
@@ -38,7 +38,7 @@ namespace vendio_backend.Controllers
             {
                 return NotFound();
             }
-            return await _context.favoritesMapping.Where(e=>e.userId==userId).ToListAsync();
+            return await _context.favoritesMapping.Where(e => e.userId == userId).ToListAsync();
         }
 
         // GET: api/vehicle/offer
@@ -130,10 +130,32 @@ namespace vendio_backend.Controllers
             vehicle.vim = vehicleRegister.vim;
             vehicle.year = vehicleRegister.year;
             vehicle.isEnabled = true;
-            vehicle.isOffer = false ;
+            vehicle.isOffer = false;
             vehicle.isPublished = true;
             vehicle.modificationDate = DateTime.Now;
+            
             vehicle.registerDate = DateTime.Now;
+
+            if (vehicle.brand.Length <= 2)
+            {
+                return BadRequest("Not valid brand");
+            }
+            if (vehicle.createdBy<=0 )
+            {
+                return BadRequest("Not valid creator");
+            }
+            if (vehicle.model.Length <= 2)
+            {
+                return BadRequest("Not valid model");
+            }
+            if (vehicle.name.Length <= 2 || vehicle.name.Length>30)
+            {
+                return BadRequest("Not valid title");
+            }
+            if (vehicle.year.Length <= 1)
+            {
+                return BadRequest("Not valid year");
+            }
 
             _context.Vehicles.Add(vehicle);
                 await _context.SaveChangesAsync();
