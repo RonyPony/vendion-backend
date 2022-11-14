@@ -160,7 +160,8 @@ namespace vendio_backend.Controllers
                 //await _photoService.CreatePhoto(newPhoto);
                 _context.Add(newPhoto);
                 await _context.SaveChangesAsync();
-                return StatusCode(201);
+                return CreatedAtAction("newPhoto", new { id = newPhoto.Id }, newPhoto);
+                
             }
             catch (Exception e)
             {
