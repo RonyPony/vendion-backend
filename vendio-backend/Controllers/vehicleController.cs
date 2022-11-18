@@ -41,6 +41,24 @@ namespace vendio_backend.Controllers
             return await _context.favoritesMapping.Where(e => e.userId == userId).ToListAsync();
         }
 
+
+        // GET: api/vehicles/{userId}
+        [HttpGet]
+        [Route("vehiclesByUser/{userId}")]
+        public async Task<ActionResult<IEnumerable<vehicle>>> getVehicleByUser(int userId)
+        {
+            User x =await _context.Users.FindAsync(userId);
+
+
+            if (x == null)
+            {
+                return NotFound("UserNotFound");
+            }
+
+            //IEnumerable<vehicle> vehicles = await _context.Vehicles.Where(e=>e.createdBy==userId).ToListAsync();
+            return await _context.Vehicles.Where(e => e.createdBy == userId).ToListAsync();
+        }
+
         // GET: api/vehicle/offer
         [HttpGet("offer")]
         public async Task<ActionResult<IEnumerable<vehicle>>> GetOffer()
