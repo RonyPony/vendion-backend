@@ -33,7 +33,7 @@ namespace vendio_backend.Models
         public string description { get; set; }
 
         [DisplayName("Fecha de creacion")]
-        [DataType(DataType.DateTime)]
+        [DataType(DataType.Date)]
         public DateTime registerDate { get; set; }
 
         [DisplayName("Fecha de modificacion")]
@@ -62,6 +62,10 @@ namespace vendio_backend.Models
         [Required]
         [DisplayName("Condition")]
         public string condition { get; set; }
+
+        [Required]
+        [DisplayName("Location")]
+        public string location { get; set; }
 
 
     }
