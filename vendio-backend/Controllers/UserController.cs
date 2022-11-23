@@ -106,7 +106,7 @@ namespace vendio_backend.Controllers
                 user.deletedAccount = false;
                 
                 user.showNumber = true;
-                user.phoneNumber = "N/A";
+                user.phoneNumber = userRegister.phone;
                 _context.Users.Add(user);
                 await _context.SaveChangesAsync();
 

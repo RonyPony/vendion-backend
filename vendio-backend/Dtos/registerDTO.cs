@@ -7,7 +7,7 @@ namespace vendio_backend.Dtos
     public class registerDTO
     {
         [Required]
-        [DisplayName("User name")]
+        [DisplayName("Name")]
         [DataType(DataType.Text)]
         public string UserName { get; set; }
 
@@ -25,6 +25,11 @@ namespace vendio_backend.Dtos
         [DataType(DataType.Password)]
         [DisplayName("Password")]
         public string Password { get; set; }
+
+        [Required]
+        [DataType(DataType.PhoneNumber)]
+        [DisplayName("Phone Number")]
+        public string phone { get; set; }
     }
 }
 
