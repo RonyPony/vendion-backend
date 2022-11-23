@@ -26,7 +26,7 @@ namespace datingAppBackend.Models
 
         [Required]
         [DataType(DataType.Text)]
-        [DisplayName("User Name")]
+        [DisplayName("Name")]
         public string name { get; set; }
 
         [Required]

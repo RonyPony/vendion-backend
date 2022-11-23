@@ -95,7 +95,7 @@ namespace vendio_backend.Controllers
             if (emailExists)
             {
                 User user = new User();
-                user.name = userRegister.UserName;
+                user.name = userRegister.name;
                 user.email = userRegister.Email;
                 user.Password = userRegister.Password;
                 user.lastName = userRegister.lastName;
