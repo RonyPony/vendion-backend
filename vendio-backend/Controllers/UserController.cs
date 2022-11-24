@@ -114,7 +114,7 @@ namespace vendio_backend.Controllers
             }
             else
             {
-                return BadRequest("This email is already registered, try to login");
+                return BadRequest("duplicateEmail");
             }
         }
 
@@ -124,7 +124,7 @@ namespace vendio_backend.Controllers
         {
             if (email == String.Empty)
             {
-                return BadRequest("Please provide an email address");
+                return BadRequest("emptyEmail");
             }
 
             try
@@ -134,7 +134,7 @@ namespace vendio_backend.Controllers
                             select x).FirstOrDefault();
                 if (user == null)
                 {
-                    return NotFound("User not found");
+                    return NotFound("userNotFound");
                 }
 
                 return Ok(user);
@@ -151,7 +151,7 @@ namespace vendio_backend.Controllers
         {
             if (userId == null || userId==0 || vehicleId == null || vehicleId == 0)
             {
-                return BadRequest("Please provide all the info");
+                return BadRequest("infoMissing");
             }
 
             try
@@ -162,7 +162,7 @@ namespace vendio_backend.Controllers
                             select x).FirstOrDefault();
                 if (user == null)
                 {
-                    return NotFound("User not found");
+                    return NotFound("userNotFound");
                 }
 
                 return Ok(user);
@@ -205,7 +205,7 @@ namespace vendio_backend.Controllers
             }
             else
             {
-                return Unauthorized("Wrong information provided");
+                return Unauthorized("credentialsError");
             }
 
             User user = await _context.Users.FindAsync(userId);
@@ -246,7 +246,7 @@ namespace vendio_backend.Controllers
             }
             else
             {
-                return BadRequest("Provide ID");
+                return BadRequest("provideID");
             }
 
 
@@ -278,7 +278,7 @@ namespace vendio_backend.Controllers
             }
             else
             {
-                return BadRequest("Provide ID");
+                return BadRequest("ProvideID");
             }
 
 
