@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/Users/rony/projects/vendion-backend/vendio-backend/vendio-backend.csproj": {}
+    "/Users/ron/projects/vendion-backend/vendio-backend/vendio-backend.csproj": {}
   },
   "projects": {
-    "/Users/rony/projects/vendion-backend/vendio-backend/vendio-backend.csproj": {
+    "/Users/ron/projects/vendion-backend/vendio-backend/vendio-backend.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/rony/projects/vendion-backend/vendio-backend/vendio-backend.csproj",
+        "projectUniqueName": "/Users/ron/projects/vendion-backend/vendio-backend/vendio-backend.csproj",
         "projectName": "vendio-backend",
-        "projectPath": "/Users/rony/projects/vendion-backend/vendio-backend/vendio-backend.csproj",
-        "packagesPath": "/Users/rony/.nuget/packages/",
-        "outputPath": "/Users/rony/projects/vendion-backend/vendio-backend/obj/",
+        "projectPath": "/Users/ron/projects/vendion-backend/vendio-backend/vendio-backend.csproj",
+        "packagesPath": "/Users/ron/.nuget/packages/",
+        "outputPath": "/Users/ron/projects/vendion-backend/vendio-backend/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/rony/.nuget/NuGet/NuGet.Config"
+          "/Users/ron/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
@@ -43,6 +43,10 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[6.0.8, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[6.0.10, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
@@ -86,7 +90,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.400/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.100/RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using vendio_backend.Models;
 
 namespace vendio_backend.Dtos
 {
@@ -9,7 +10,7 @@ namespace vendio_backend.Dtos
         
         public int createdBy { get; set; }
 
-        public List<String> features { get; set; }
+        //public int features { get; set; }
 
         public long price { get; set; }
 
@@ -47,6 +48,10 @@ namespace vendio_backend.Dtos
         [Required]
         [DisplayName("Condition")]
         public string condition { get; set; }
+
+        [Required]
+        [DisplayName("Location")]
+        public string location { get; set; }
     }
 }
 

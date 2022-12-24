@@ -1,36 +1,33 @@
 ﻿<Properties StartupConfiguration="{DD6D58F1-D6FE-4671-80DC-8CD91DC3AADE}|Default">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="vendio-backend/Controllers/photosController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="vendio-backend/Controllers/vehicleController.cs">
     <Files>
-      <File FileName="vendio-backend/Program.cs" Line="34" Column="1" />
-      <File FileName="vendio-backend/Controllers/photosController.cs" Line="82" Column="16" />
-      <File FileName="vendio-backend/Controllers/UserController.cs" Line="14" Column="40" />
-      <File FileName="vendio-backend/Models/photo.cs" Line="13" Column="51" />
-      <File FileName="vendio-backend/Models/vendionContext.cs" Line="16" Column="57" />
-      <File FileName="../MobileDatingApp-BackEnd/datingAppBackend/datingAppBackend/Models/Photo.cs" Line="11" Column="37" />
-      <File FileName="vendio-backend/Models/PhotoToRegister.cs" Line="7" Column="27" />
-      <File FileName="vendio-backend/Controllers/vehicleController.cs" Line="19" Column="10" />
+      <File FileName="vendio-backend/Models/vendionContext.cs" Line="16" Column="69" />
+      <File FileName="vendio-backend/Dtos/newVehicleDto.cs" Line="17" Column="41" />
+      <File FileName="vendio-backend/Models/vehicle.cs" Line="18" Column="54" />
+      <File FileName="vendio-backend/Controllers/vehicleController.cs" Line="363" Column="1" />
+      <File FileName="vendio-backend/Models/vehicleFeature.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="vendio-backend" expanded="True">
-            <Node name="vendio-backend" expanded="True">
+            <Node name="vendio-backend" expanded="True" selected="True">
               <Node name="Controllers" expanded="True" />
+              <Node name="Dtos" expanded="True" />
               <Node name="Models" expanded="True" />
             </Node>
           </Node>
         </State>
       </Pad>
-      <Pad Id="MonoDevelop.Debugger.WatchPad">
-        <State />
-      </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/Users/ron/projects/vendion-backend/vendio-backend/Controllers/vehicleController.cs" relfile="vendio-backend/Controllers/vehicleController.cs" line="346" column="1" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.ItemProperties.vendio-backend PreferredExecutionTarget="/Applications/Safari.app" />
+  <MonoDevelop.Ide.ItemProperties.vendio-backend PreferredExecutionTarget="/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app" />
 </Properties>

@@ -141,7 +141,7 @@ namespace vendio_backend.Controllers
             vehicle.contactPhoneNumber = vehicleRegister.contactPhoneNumber;
             vehicle.createdBy = vehicleRegister.createdBy;
             vehicle.description = vehicleRegister.description;
-            vehicle.features = vehicleRegister.features;
+            //vehicle.features = vehicleRegister.features;
             vehicle.model = vehicleRegister.model;
             vehicle.name = vehicleRegister.name;
             vehicle.price = vehicleRegister.price;
@@ -151,7 +151,7 @@ namespace vendio_backend.Controllers
             vehicle.isOffer = false;
             vehicle.isPublished = true;
             vehicle.modificationDate = DateTime.Now;
-            
+            vehicle.location = vehicleRegister.location;
             vehicle.registerDate = DateTime.Now;
 
             if (vehicle.brand.Length <= 2)
@@ -353,8 +353,12 @@ namespace vendio_backend.Controllers
                 return NotFound();
             }
 
+            
             _context.Vehicles.Remove(vehicle);
             await _context.SaveChangesAsync();
+
+            //_context.Entry(vehicle).State = EntityState.Deleted;
+            //_context.SaveChanges();
 
             return NoContent();
         }
