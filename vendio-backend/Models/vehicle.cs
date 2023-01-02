@@ -7,7 +7,7 @@ namespace vendio_backend.Models
     public class vehicle
     {
         [Key]
-        public int id { get; set; }
+        public int Id { get; set; }
         public int createdBy { get; set; }
 
         public bool isEnabled { get; set; }
@@ -15,7 +15,7 @@ namespace vendio_backend.Models
         [DefaultValue(false)]
         public bool isOffer { get; set; }
 
-        //public List<String>? features { get; set; }
+        public List<String> features { get; set; }
 
         public long price { get; set; }
 

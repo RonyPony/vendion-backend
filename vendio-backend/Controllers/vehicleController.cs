@@ -93,7 +93,7 @@ namespace vendio_backend.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> Putvehicle(int id, vehicle vehicle)
         {
-            if (id != vehicle.id)
+            if (id != vehicle.Id)
             {
                 return BadRequest();
             }
@@ -141,7 +141,7 @@ namespace vendio_backend.Controllers
             vehicle.contactPhoneNumber = vehicleRegister.contactPhoneNumber;
             vehicle.createdBy = vehicleRegister.createdBy;
             vehicle.description = vehicleRegister.description;
-            //vehicle.features = vehicleRegister.features;
+            vehicle.features = vehicleRegister.features;
             vehicle.model = vehicleRegister.model;
             vehicle.name = vehicleRegister.name;
             vehicle.price = vehicleRegister.price;
@@ -178,7 +178,7 @@ namespace vendio_backend.Controllers
             _context.Vehicles.Add(vehicle);
                 await _context.SaveChangesAsync();
 
-                return CreatedAtAction("Getvehicle", new { id = vehicle.id }, vehicle);
+                return CreatedAtAction("Getvehicle", new { id = vehicle.Id }, vehicle);
             //}
             //else
             //{
@@ -279,7 +279,7 @@ namespace vendio_backend.Controllers
                     User user = await _context.Users.FindAsync(userId);
                     favoriteVehiclesMapping fav = new favoriteVehiclesMapping();
                     fav.userId = user.id;
-                    fav.vehicleId = vehicle.id;
+                    fav.vehicleId = vehicle.Id;
                     fav.CreatedAt = DateTime.UtcNow;
                     _context.favoritesMapping.AddAsync(fav);
                     await _context.SaveChangesAsync();
@@ -365,7 +365,7 @@ namespace vendio_backend.Controllers
 
         private bool vehicleExists(int id)
         {
-            return (_context.Vehicles?.Any(e => e.id == id)).GetValueOrDefault();
+            return (_context.Vehicles?.Any(e => e.Id == id)).GetValueOrDefault();
         }
     }
 }

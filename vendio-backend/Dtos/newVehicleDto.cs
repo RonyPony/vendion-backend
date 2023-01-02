@@ -10,7 +10,7 @@ namespace vendio_backend.Dtos
         
         public int createdBy { get; set; }
 
-        //public int features { get; set; }
+        public List<String> features { get; set; }
 
         public long price { get; set; }
 
