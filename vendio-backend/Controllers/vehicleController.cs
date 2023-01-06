@@ -141,7 +141,15 @@ namespace vendio_backend.Controllers
             vehicle.contactPhoneNumber = vehicleRegister.contactPhoneNumber;
             vehicle.createdBy = vehicleRegister.createdBy;
             vehicle.description = vehicleRegister.description;
-            vehicle.features = vehicleRegister.features;
+            if (vehicleRegister.features!=null || vehicleRegister.features=="")
+            {
+                vehicle.features = vehicleRegister.features;
+            }
+            else
+            {
+                vehicle.features = "Sin features";
+            }
+            
             vehicle.model = vehicleRegister.model;
             vehicle.name = vehicleRegister.name;
             vehicle.price = vehicleRegister.price;

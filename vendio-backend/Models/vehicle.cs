@@ -15,7 +15,7 @@ namespace vendio_backend.Models
         [DefaultValue(false)]
         public bool isOffer { get; set; }
 
-        public List<String> features { get; set; }
+        public String features { get; set; }
 
         public long price { get; set; }
 
