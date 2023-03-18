@@ -134,11 +134,11 @@ namespace vendio_backend.Migrations
 
             modelBuilder.Entity("vendio_backend.Models.vehicle", b =>
                 {
-                    b.Property<int>("id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<string>("brand")
                         .IsRequired()
@@ -156,6 +156,10 @@ namespace vendio_backend.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("features")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -197,7 +201,7 @@ namespace vendio_backend.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("id");
+                    b.HasKey("Id");
 
                     b.ToTable("Vehicles");
                 });

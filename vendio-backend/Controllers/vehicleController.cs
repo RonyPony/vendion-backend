@@ -88,6 +88,80 @@ namespace vendio_backend.Controllers
             return vehicle;
         }
 
+        //POST: api/vehicle/makeOffer/5
+        [HttpPost("makeOffer/{id}")]
+        public async Task<IActionResult> makeOffer(int id)
+        {
+
+            if (id ==null)
+            {
+                return BadRequest();
+            }
+
+            vehicle car = await _context.Vehicles.FindAsync(id);
+            if (car==null)
+            {
+                return NotFound();
+            }
+            car.isOffer = true;
+            _context.Entry(car).State = EntityState.Modified;
+
+            try
+            {
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!vehicleExists(id))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            return NoContent();
+        }
+
+        //POST: api/vehicle/makeOffer/5
+        [HttpPost("removeOffer/{id}")]
+        public async Task<IActionResult> removeOffer(int id)
+        {
+
+            if (id == null)
+            {
+                return BadRequest();
+            }
+
+            vehicle car = await _context.Vehicles.FindAsync(id);
+            if (car == null)
+            {
+                return NotFound();
+            }
+            car.isOffer = false;
+            _context.Entry(car).State = EntityState.Modified;
+
+            try
+            {
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!vehicleExists(id))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            return NoContent();
+        }
+
         // PUT: api/vehicle/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
