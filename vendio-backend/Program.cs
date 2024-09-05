@@ -1,5 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.Data.SqlClient;
+using Microsoft.EntityFrameworkCore;
 using vendio_backend.Models;
+
 
 var builder = WebApplication.CreateBuilder(args);
 AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
@@ -9,9 +11,9 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddDbContext<vendionContext>(opt =>
 {
-    //opt.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnections"));
-    opt.UseNpgsql(builder.Configuration.GetConnectionString("postgres"));
-   
+    opt.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnections"));
+    //opt.UseNpgsql(builder.Configuration.GetConnectionString("postgres"));
+
 });
 
 builder.Services.AddEndpointsApiExplorer();

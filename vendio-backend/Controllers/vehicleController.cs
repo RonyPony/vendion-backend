@@ -148,6 +148,7 @@ namespace vendio_backend.Controllers
             vehicle.vim = vehicleRegister.vim;
             vehicle.year = vehicleRegister.year;
             vehicle.isEnabled = true;
+            vehicle.location = vehicleRegister.location;
             vehicle.isOffer = false;
             vehicle.isPublished = true;
             vehicle.modificationDate = DateTime.Now;
