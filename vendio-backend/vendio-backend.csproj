@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
@@ -28,7 +28,10 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Migrations\" />
-    <Folder Include="Models\" />
     <Folder Include="Dtos\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\vendion.core\vendion.core.csproj" />
+    <ProjectReference Include="..\vendion.data\vendion.data.csproj" />
   </ItemGroup>
 </Project>

@@ -1,13 +1,5 @@
-﻿
-using datingAppBackend.Models;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Threading.Tasks;
 using vendio_backend.Models;
 
 namespace vendio_backend.Controllers
@@ -135,7 +127,7 @@ namespace vendio_backend.Controllers
                 if (!extensions.Contains(fileExtension))
                     throw new ArgumentException("{0} is an InvalidFileExtention", fileExtension);
 
-                vehicle foundVehicle = await _context.Vehicles.FindAsync(photoToRegister.productId);
+                Vehicle foundVehicle = await _context.Vehicles.FindAsync(photoToRegister.productId);
 
                 if (foundVehicle is null)
                     NotFound("VehicleNotFound");

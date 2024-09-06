@@ -1,9 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 25.0.1703.0
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35122.118
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "vendio-backend", "vendio-backend\vendio-backend.csproj", "{DD6D58F1-D6FE-4671-80DC-8CD91DC3AADE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "vendio-backend", "vendio-backend\vendio-backend.csproj", "{DD6D58F1-D6FE-4671-80DC-8CD91DC3AADE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "vendion.core", "vendion.core\vendion.core.csproj", "{8CBB955D-6C6F-46D7-A45D-208C2199B385}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "vendion.data", "vendion.data\vendion.data.csproj", "{70E48CAC-3303-4769-BF4A-7328DE188E3F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{DD6D58F1-D6FE-4671-80DC-8CD91DC3AADE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DD6D58F1-D6FE-4671-80DC-8CD91DC3AADE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DD6D58F1-D6FE-4671-80DC-8CD91DC3AADE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8CBB955D-6C6F-46D7-A45D-208C2199B385}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8CBB955D-6C6F-46D7-A45D-208C2199B385}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8CBB955D-6C6F-46D7-A45D-208C2199B385}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8CBB955D-6C6F-46D7-A45D-208C2199B385}.Release|Any CPU.Build.0 = Release|Any CPU
+		{70E48CAC-3303-4769-BF4A-7328DE188E3F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70E48CAC-3303-4769-BF4A-7328DE188E3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70E48CAC-3303-4769-BF4A-7328DE188E3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70E48CAC-3303-4769-BF4A-7328DE188E3F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,6 +1,8 @@
 ﻿using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using vendio_backend.Models;
+using vendion.core.Interfaces;
+using vendion.core.Services;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -18,6 +20,7 @@ builder.Services.AddDbContext<vendionContext>(opt =>
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddTransient<IVehicleService, VehicleService>();
 
 var app = builder.Build();
 

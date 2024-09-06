@@ -854,6 +854,34 @@
             "rid": "win"
           }
         }
+      },
+      "vendion.core/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "vendion.data": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/vendion.core.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/vendion.core.dll": {}
+        }
+      },
+      "vendion.data/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "6.0.5",
+          "Microsoft.EntityFrameworkCore.SqlServer": "6.0.5",
+          "Swashbuckle.AspNetCore": "6.2.3"
+        },
+        "compile": {
+          "bin/placeholder/vendion.data.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/vendion.data.dll": {}
+        }
       }
     }
   },
@@ -2174,6 +2202,16 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
+    },
+    "vendion.core/1.0.0": {
+      "type": "project",
+      "path": "../vendion.core/vendion.core.csproj",
+      "msbuildProject": "../vendion.core/vendion.core.csproj"
+    },
+    "vendion.data/1.0.0": {
+      "type": "project",
+      "path": "../vendion.data/vendion.data.csproj",
+      "msbuildProject": "../vendion.data/vendion.data.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -2181,7 +2219,9 @@
       "Microsoft.EntityFrameworkCore >= 6.0.5",
       "Microsoft.EntityFrameworkCore.Design >= 6.0.5",
       "Microsoft.EntityFrameworkCore.SqlServer >= 6.0.5",
-      "Swashbuckle.AspNetCore >= 6.2.3"
+      "Swashbuckle.AspNetCore >= 6.2.3",
+      "vendion.core >= 1.0.0",
+      "vendion.data >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -2211,7 +2251,14 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\projectos\\vendion-backend\\vendion.core\\vendion.core.csproj": {
+              "projectPath": "C:\\projectos\\vendion-backend\\vendion.core\\vendion.core.csproj"
+            },
+            "C:\\projectos\\vendion-backend\\vendion.data\\vendion.data.csproj": {
+              "projectPath": "C:\\projectos\\vendion-backend\\vendion.data\\vendion.data.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

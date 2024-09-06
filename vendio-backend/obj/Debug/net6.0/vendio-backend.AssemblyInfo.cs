@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("vendio-backend")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+125a3cac896f9b943fc4a99fe89d24cf7dfa8741")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f4a217505b9ca8e326b199dbce1b82580497c6ce")]
 [assembly: System.Reflection.AssemblyProductAttribute("vendio-backend")]
 [assembly: System.Reflection.AssemblyTitleAttribute("vendio-backend")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -1,9 +1,10 @@
 ﻿using System;
-using datingAppBackend.Models;
+
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using vendio_backend.Dtos;
 using vendio_backend.Models;
+using vendion.core.Interfaces;
 
 namespace vendio_backend.Controllers
 {
@@ -11,110 +12,87 @@ namespace vendio_backend.Controllers
     [ApiController]
     public class vehicleController : ControllerBase
     {
-        private readonly vendionContext _context;
+        private readonly IVehicleService _vehicleService;
 
-        public vehicleController(vendionContext context)
+        public vehicleController(IVehicleService _vehicleservi)
         {
-            _context = context;
+            _vehicleService = _vehicleservi;
         }
 
         // GET: api/vehicle
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<vehicle>>> Getvehicles()
+        public async Task<ActionResult<IEnumerable<Vehicle>>> Getvehicles()
         {
-            if (_context.Vehicles == null)
+            List<Vehicle> all = await _vehicleService.getAllVehiclesAsync();
+            if (all == null)
             {
                 return NotFound();
             }
-            return await _context.Vehicles.Where(e => e.isEnabled == true).ToListAsync();
+            return Ok(all);
         }
 
         // GET: api/FavVehicles
         [HttpGet]
         [Route("getFavorites/{userId}")]
-        public async Task<ActionResult<IEnumerable<favoriteVehiclesMapping>>> GetFavVehicles(int userId)
+        public async Task<ActionResult<IEnumerable<Vehicle>>> GetFavVehicles(int userId)
         {
-            if (_context.Vehicles == null)
-            {
-                return NotFound();
-            }
-            return await _context.favoritesMapping.Where(e => e.userId == userId).ToListAsync();
+                return Ok(await _vehicleService.getAllFavoriteVehicles(userId));       
         }
 
 
         // GET: api/vehicles/{userId}
         [HttpGet]
         [Route("vehiclesByUser/{userId}")]
-        public async Task<ActionResult<IEnumerable<vehicle>>> getVehicleByUser(int userId)
+        public async Task<ActionResult<IEnumerable<Vehicle>>> getVehicleByUser(int userId)
         {
-            User x =await _context.Users.FindAsync(userId);
+            List<Vehicle> vehicle = await _vehicleService.getVehicleByUserIdAsync(userId);
 
-
-            if (x == null)
+            if (vehicle==null)
             {
                 return NotFound("UserNotFound");
             }
 
-            //IEnumerable<vehicle> vehicles = await _context.Vehicles.Where(e=>e.createdBy==userId).ToListAsync();
-            return await _context.Vehicles.Where(e => e.createdBy == userId).ToListAsync();
+            //IEnumerable<Vehicle> vehicles = await _context.Vehicles.Where(e=>e.createdBy==userId).ToListAsync();
+            return Ok(vehicle);
         }
 
         // GET: api/vehicle/offer
         [HttpGet("offer")]
-        public async Task<ActionResult<IEnumerable<vehicle>>> GetOffer()
+        public async Task<ActionResult<IEnumerable<Vehicle>>> GetOffer()
         {
-            if (_context.Vehicles == null)
+            List<Vehicle> off = await _vehicleService.getVehiclesWithOfferAsync();
+            if (off == null)
             {
                 return NotFound();
             }
-            return await _context.Vehicles.Where(e => e.isEnabled == true && e.isOffer).ToListAsync();
+            return Ok(off); 
         }
 
         // GET: api/vehicle/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<vehicle>> Getvehicle(int id)
+        public async Task<ActionResult<Vehicle>> Getvehicle(int id)
         {
-            if (_context.Vehicles == null)
-            {
-                return NotFound();
-            }
-            var vehicle = await _context.Vehicles.FindAsync(id);
+            Vehicle vehicle =await _vehicleService.getVehicleByIdAsync(id);
 
             if (vehicle == null)
             {
                 return NotFound();
             }
 
-            return vehicle;
+            return Ok(vehicle);
         }
 
         // PUT: api/vehicle/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> Putvehicle(int id, vehicle vehicle)
+        public async Task<IActionResult> Putvehicle(int id, Vehicle vehicle)
         {
             if (id != vehicle.id)
             {
                 return BadRequest();
             }
 
-            _context.Entry(vehicle).State = EntityState.Modified;
-
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!vehicleExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
+            _vehicleService.updateVehicleAsync(vehicle);
 
             return NoContent();
         }
@@ -122,20 +100,16 @@ namespace vendio_backend.Controllers
         // POST: api/vehicle
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<vehicle>> Postvehicle(newVehicleDto vehicleRegister)
+        public async Task<ActionResult<Vehicle>> Postvehicle(newVehicleDto vehicleRegister)
         {
-            if (_context.Vehicles == null)
-            {
-                return Problem("Entity set 'vendionContext.vehicles'  is null.");
-            }
 
-            //List<vehicle> vehiclesFound = await _context.Vehicles
+            //List<Vehicle> vehiclesFound = await _context.Vehicles
             //    .Where(x => x.email == vehicleRegister!.Email)
             //    .ToListAsync();
             //bool emailExists = vehiclesFound.Count <= 0;
             //if (emailExists)
             //{
-            vehicle vehicle = new vehicle();
+            Vehicle vehicle = new Vehicle();
             vehicle.brand = vehicleRegister.brand;
             vehicle.condition = vehicleRegister.condition;
             vehicle.contactPhoneNumber = vehicleRegister.contactPhoneNumber;
@@ -176,8 +150,8 @@ namespace vendio_backend.Controllers
                 return BadRequest("Not valid year");
             }
 
-            _context.Vehicles.Add(vehicle);
-                await _context.SaveChangesAsync();
+            Vehicle response = await _vehicleService.createVehicle(vehicle);
+            
 
                 return CreatedAtAction("Getvehicle", new { id = vehicle.id }, vehicle);
             //}
@@ -193,23 +167,16 @@ namespace vendio_backend.Controllers
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
         [Route("enablevehicle/{id}")]
-        public async Task<ActionResult<vehicle>> enablevehicle(int id)
+        public async Task<ActionResult<Vehicle>> enablevehicle(int id)
         {
-
-            if (_context.Vehicles == null)
-            {
-                return Problem("Entity set 'vendionContext.vehicles'  is null.");
-            }
 
 
             if (id != null)
             {
-                vehicle vehicle = await _context.Vehicles.FindAsync(id);
+                Vehicle vehicle = await _vehicleService.getVehicleByIdAsync(id);
 
                 vehicle.isEnabled = true;
-
-                _context.Vehicles.Update(vehicle);
-                await _context.SaveChangesAsync();
+                await _vehicleService.updateVehicleAsync(vehicle);
 
                 return Ok(vehicle);
             }
@@ -225,23 +192,14 @@ namespace vendio_backend.Controllers
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
         [Route("disablevehicle/{id}")]
-        public async Task<ActionResult<vehicle>> disablevehicle(int id)
+        public async Task<ActionResult<Vehicle>> disablevehicle(int id)
         {
-
-            if (_context.Vehicles == null)
-            {
-                return Problem("Entity set 'vendionContext.vehicles'  is null.");
-            }
-
-
             if (id != null)
             {
-                vehicle vehicle = await _context.Vehicles.FindAsync(id);
+                Vehicle vehicle = await _vehicleService.getVehicleByIdAsync(id);
 
                 vehicle.isEnabled = false;
-
-                _context.Vehicles.Update(vehicle);
-                await _context.SaveChangesAsync();
+                _vehicleService.updateVehicleAsync(vehicle);
 
                 return Ok(vehicle);
             }
@@ -258,36 +216,26 @@ namespace vendio_backend.Controllers
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
         [Route("addFavorite/{carId}/{userId}")]
-        public async Task<ActionResult<vehicle>> addFavorite(int carId,int userId)
+        public async Task<ActionResult<List<Vehicle>>> addFavorite(int carId,int userId)
         {
-
-            if (_context.Vehicles == null)
-            {
-                return Problem("Entity set 'vendionContext.vehicles'  is null.");
-            }
-
 
             if (carId != null && userId!=null)
             {
-                List<favoriteVehiclesMapping> has = await _context.favoritesMapping.Where(e=>e.userId ==userId && e.vehicleId ==carId).ToListAsync();
-                if (has.Count>=1)
+                bool isExist = await _vehicleService.isVehicleFavorite(carId, userId);
+                
+                
+                if (isExist)
                 {
-                    return Ok("this vehicle is already in favorites");
+                    return BadRequest("this vehicle is already in favorites");
                 }
                 else
                 {
-                    vehicle vehicle = await _context.Vehicles.FindAsync(carId);
-                    User user = await _context.Users.FindAsync(userId);
-                    favoriteVehiclesMapping fav = new favoriteVehiclesMapping();
-                    fav.userId = user.id;
-                    fav.vehicleId = vehicle.id;
-                    fav.CreatedAt = DateTime.UtcNow;
-                    _context.favoritesMapping.AddAsync(fav);
-                    await _context.SaveChangesAsync();
-                    return Ok(fav);
+                    List<Vehicle> allList = await _vehicleService.addToFavorite(userId, carId);
+                    
+                    return Ok(allList);
                 }
 
-                return NotFound();
+                
             }
             else
             {
@@ -302,24 +250,18 @@ namespace vendio_backend.Controllers
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
         [Route("removeFavorite/{carId}/{userId}")]
-        public async Task<ActionResult<vehicle>> removeFavorite(int carId, int userId)
+        public async Task<ActionResult<Vehicle>> removeFavorite(int carId, int userId)
         {
-
-            if (_context.Vehicles == null)
-            {
-                return Problem("Entity set 'vendionContext.vehicles'  is null.");
-            }
-
 
             if (carId != null && userId != null)
             {
-                List<favoriteVehiclesMapping> has = await _context.favoritesMapping.Where(e => e.userId == userId && e.vehicleId == carId).ToListAsync();
-                if (has.Count >= 1)
+                bool isExist = await _vehicleService.isVehicleFavorite(userId,carId);
+                List<Vehicle> has = await _vehicleService.getAllFavoriteVehicles(userId);
+                if (isExist)
                 {
-                    foreach (var item in has)   
+                    foreach (Vehicle item in has)   
                     {
-                        _context.favoritesMapping.Remove(item);
-                        _context.SaveChanges();
+                        _vehicleService.removeFromFavorite(userId, carId);
                     }
                     
                     return Ok("Removed Successfully");
@@ -344,26 +286,25 @@ namespace vendio_backend.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> Deletevehicle(int id)
         {
-            if (_context.Vehicles == null)
-            {
-                return NotFound();
-            }
-            var vehicle = await _context.Vehicles.FindAsync(id);
+            Vehicle vehicle = await _vehicleService.getVehicleByIdAsync(id);
             if (vehicle == null)
             {
                 return NotFound();
             }
 
-            _context.Vehicles.Remove(vehicle);
-            await _context.SaveChangesAsync();
+            _vehicleService.deleteVehicleAsync(id);
 
             return NoContent();
         }
 
-        private bool vehicleExists(int id)
+        [HttpGet("makes")]
+        public async Task<IActionResult> GetVehicleBrandsAsync()
         {
-            return (_context.Vehicles?.Any(e => e.id == id)).GetValueOrDefault();
+            List<VehicleBrand> response = _vehicleService.getAllBrandsAsync();
+            return Ok(response);
         }
+
+        
     }
 }
 

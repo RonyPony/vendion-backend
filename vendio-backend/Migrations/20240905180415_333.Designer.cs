@@ -24,7 +24,7 @@ namespace vendio_backend.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
-            modelBuilder.Entity("datingAppBackend.Models.Photo", b =>
+            modelBuilder.Entity("vendio_backend.Models.Photo", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -54,7 +54,7 @@ namespace vendio_backend.Migrations
                     b.ToTable("photos");
                 });
 
-            modelBuilder.Entity("datingAppBackend.Models.User", b =>
+            modelBuilder.Entity("vendio_backend.Models.User", b =>
                 {
                     b.Property<int>("id")
                         .ValueGeneratedOnAdd()

@@ -1,0 +1,16 @@
+C:\projectos\vendion-backend\vendion.core\bin\Debug\net6.0\vendion.core.deps.json
+C:\projectos\vendion-backend\vendion.core\bin\Debug\net6.0\vendion.core.dll
+C:\projectos\vendion-backend\vendion.core\bin\Debug\net6.0\vendion.core.pdb
+C:\projectos\vendion-backend\vendion.core\bin\Debug\net6.0\vendion.data.dll
+C:\projectos\vendion-backend\vendion.core\bin\Debug\net6.0\vendion.data.pdb
+C:\projectos\vendion-backend\vendion.core\obj\Debug\net6.0\vendion.core.csproj.AssemblyReference.cache
+C:\projectos\vendion-backend\vendion.core\obj\Debug\net6.0\vendion.core.GeneratedMSBuildEditorConfig.editorconfig
+C:\projectos\vendion-backend\vendion.core\obj\Debug\net6.0\vendion.core.AssemblyInfoInputs.cache
+C:\projectos\vendion-backend\vendion.core\obj\Debug\net6.0\vendion.core.AssemblyInfo.cs
+C:\projectos\vendion-backend\vendion.core\obj\Debug\net6.0\vendion.core.csproj.CoreCompileInputs.cache
+C:\projectos\vendion-backend\vendion.core\obj\Debug\net6.0\vendion.core.sourcelink.json
+C:\projectos\vendion-backend\vendion.core\obj\Debug\net6.0\vendion..BCD4F45F.Up2Date
+C:\projectos\vendion-backend\vendion.core\obj\Debug\net6.0\vendion.core.dll
+C:\projectos\vendion-backend\vendion.core\obj\Debug\net6.0\refint\vendion.core.dll
+C:\projectos\vendion-backend\vendion.core\obj\Debug\net6.0\vendion.core.pdb
+C:\projectos\vendion-backend\vendion.core\obj\Debug\net6.0\ref\vendion.core.dll
