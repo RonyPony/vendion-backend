@@ -74,10 +74,19 @@ namespace vendion.core.Services
                 throw;
             }
         }
-
-        public VehicleBrand getBrandById(int id)
+        public async Task<List<VehicleModel>> getModelByBrandIdAsync(int brandId)
         {
-            throw new NotImplementedException();
+            VehicleBrand brand =await getBrandByIdAsync(brandId);
+            List<VehicleModel> model = await _context.VehicleModels
+                .Where(ee=>ee.brandId == brandId)
+                .Where(ee=>ee.isEnabled)
+                .ToListAsync();
+            return model;
+        }
+
+        public async Task<VehicleBrand> getBrandByIdAsync(int id)
+        {
+            return await _context.VehicleBrands.FindAsync(id);
         }
 
         public VehicleModel getModelById(int modelId)

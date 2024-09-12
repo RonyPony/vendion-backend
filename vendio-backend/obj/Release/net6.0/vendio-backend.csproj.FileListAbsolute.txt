@@ -65,3 +65,7 @@ C:\projectos\vendion-backend\vendio-backend\obj\Release\net6.0\refint\vendio-bac
 C:\projectos\vendion-backend\vendio-backend\obj\Release\net6.0\vendio-backend.pdb
 C:\projectos\vendion-backend\vendio-backend\obj\Release\net6.0\vendio-backend.genruntimeconfig.cache
 C:\projectos\vendion-backend\vendio-backend\obj\Release\net6.0\ref\vendio-backend.dll
+C:\projectos\vendion-backend\vendio-backend\bin\Release\net6.0\vendion.core.dll
+C:\projectos\vendion-backend\vendio-backend\bin\Release\net6.0\vendion.data.dll
+C:\projectos\vendion-backend\vendio-backend\bin\Release\net6.0\vendion.core.pdb
+C:\projectos\vendion-backend\vendio-backend\bin\Release\net6.0\vendion.data.pdb

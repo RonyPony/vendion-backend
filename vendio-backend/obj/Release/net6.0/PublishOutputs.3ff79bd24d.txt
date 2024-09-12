@@ -40,4 +40,8 @@ C:\projectos\vendion-backend\vendio-backend\obj\Release\net6.0\PubTmp\Out\runtim
 C:\projectos\vendion-backend\vendio-backend\obj\Release\net6.0\PubTmp\Out\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
 C:\projectos\vendion-backend\vendio-backend\obj\Release\net6.0\PubTmp\Out\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
 C:\projectos\vendion-backend\vendio-backend\obj\Release\net6.0\PubTmp\Out\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
+C:\projectos\vendion-backend\vendio-backend\obj\Release\net6.0\PubTmp\Out\vendion.core.dll
+C:\projectos\vendion-backend\vendio-backend\obj\Release\net6.0\PubTmp\Out\vendion.data.dll
+C:\projectos\vendion-backend\vendio-backend\obj\Release\net6.0\PubTmp\Out\vendion.core.pdb
+C:\projectos\vendion-backend\vendio-backend\obj\Release\net6.0\PubTmp\Out\vendion.data.pdb
 C:\projectos\vendion-backend\vendio-backend\obj\Release\net6.0\PubTmp\Out\vendio-backend.deps.json

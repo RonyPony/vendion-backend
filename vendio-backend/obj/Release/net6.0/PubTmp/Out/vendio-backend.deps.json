@@ -11,7 +11,9 @@
           "Microsoft.EntityFrameworkCore": "6.0.5",
           "Microsoft.EntityFrameworkCore.Design": "6.0.5",
           "Microsoft.EntityFrameworkCore.SqlServer": "6.0.5",
-          "Swashbuckle.AspNetCore": "6.2.3"
+          "Swashbuckle.AspNetCore": "6.2.3",
+          "vendion.core": "1.0.0",
+          "vendion.data": "1.0.0"
         },
         "runtime": {
           "vendio-backend.dll": {}
@@ -462,6 +464,24 @@
             "fileVersion": "4.700.19.56404"
           }
         }
+      },
+      "vendion.core/1.0.0": {
+        "dependencies": {
+          "vendion.data": "1.0.0"
+        },
+        "runtime": {
+          "vendion.core.dll": {}
+        }
+      },
+      "vendion.data/1.0.0": {
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "6.0.5",
+          "Microsoft.EntityFrameworkCore.SqlServer": "6.0.5",
+          "Swashbuckle.AspNetCore": "6.2.3"
+        },
+        "runtime": {
+          "vendion.data.dll": {}
+        }
       }
     }
   },
@@ -806,6 +826,16 @@
       "sha512": "sha512-CeWTdRNfRaSh0pm2gDTJFwVaXfTq6Xwv/sA887iwPTneW7oMtMlpvDIO+U60+3GWTB7Aom6oQwv5VZVUhQRdPQ==",
       "path": "system.windows.extensions/4.7.0",
       "hashPath": "system.windows.extensions.4.7.0.nupkg.sha512"
+    },
+    "vendion.core/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "vendion.data/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     }
   }
 }

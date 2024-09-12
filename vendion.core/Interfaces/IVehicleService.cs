@@ -18,12 +18,13 @@ namespace vendion.core.Interfaces
         public Task<bool> isVehicleFavorite(int userId, int carId);
 
         public List<VehicleBrand> getAllBrandsAsync();
-        public VehicleBrand getBrandById(int id);
+        public Task<VehicleBrand> getBrandByIdAsync(int id);
         public VehicleBrand updateBrand(VehicleBrand data);
         public VehicleBrand deleteBrand(int brandId);
 
         public VehicleModel[] getAllBrandModels(int brandId);
         public VehicleModel getModelById(int modelId);
+        public Task<List<VehicleModel>> getModelByBrandIdAsync(int brandId);
         public VehicleModel updateModel(VehicleModel data);
         public VehicleModel deleteModel(int modelId);
 

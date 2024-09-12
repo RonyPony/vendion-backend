@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "C:\\projectos\\vendion-backend\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{DD6D58F1-D6FE-4671-80DC-8CD91DC3AADE}|vendio-backend\\vendio-backend.csproj|c:\\projectos\\vendion-backend\\vendio-backend\\controllers\\vehiclecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DD6D58F1-D6FE-4671-80DC-8CD91DC3AADE}|vendio-backend\\vendio-backend.csproj|solutionrelative:vendio-backend\\controllers\\vehiclecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8CBB955D-6C6F-46D7-A45D-208C2199B385}|vendion.core\\vendion.core.csproj|c:\\projectos\\vendion-backend\\vendion.core\\services\\vehicleservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8CBB955D-6C6F-46D7-A45D-208C2199B385}|vendion.core\\vendion.core.csproj|solutionrelative:vendion.core\\services\\vehicleservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8CBB955D-6C6F-46D7-A45D-208C2199B385}|vendion.core\\vendion.core.csproj|c:\\projectos\\vendion-backend\\vendion.core\\interfaces\\ivehicleservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8CBB955D-6C6F-46D7-A45D-208C2199B385}|vendion.core\\vendion.core.csproj|solutionrelative:vendion.core\\interfaces\\ivehicleservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8CBB955D-6C6F-46D7-A45D-208C2199B385}|vendion.core\\vendion.core.csproj|c:\\projectos\\vendion-backend\\vendion.core\\services\\vehicleservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8CBB955D-6C6F-46D7-A45D-208C2199B385}|vendion.core\\vendion.core.csproj|solutionrelative:vendion.core\\services\\vehicleservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DD6D58F1-D6FE-4671-80DC-8CD91DC3AADE}|vendio-backend\\vendio-backend.csproj|c:\\projectos\\vendion-backend\\vendio-backend\\controllers\\vehiclecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DD6D58F1-D6FE-4671-80DC-8CD91DC3AADE}|vendio-backend\\vendio-backend.csproj|solutionrelative:vendio-backend\\controllers\\vehiclecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DD6D58F1-D6FE-4671-80DC-8CD91DC3AADE}|vendio-backend\\vendio-backend.csproj|c:\\projectos\\vendion-backend\\vendio-backend\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -78,7 +78,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
@@ -90,8 +90,7 @@
               "RelativeToolTip": "vendion.data\\Models\\PhotoToRegister.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAASAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-06T13:22:18.691Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-06T13:22:18.691Z"
             },
             {
               "$type": "Document",
@@ -101,33 +100,33 @@
               "RelativeDocumentMoniker": "vendion.core\\Interfaces\\IVehicleService.cs",
               "ToolTip": "C:\\projectos\\vendion-backend\\vendion.core\\Interfaces\\IVehicleService.cs",
               "RelativeToolTip": "vendion.core\\Interfaces\\IVehicleService.cs",
-              "ViewState": "AQIAAAcAAAAAAAAAAAAkwAwAAAAPAAAA",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAQwBQAAAATAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-06T13:16:50.897Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "VehicleService.cs",
               "DocumentMoniker": "C:\\projectos\\vendion-backend\\vendion.core\\Services\\VehicleService.cs",
               "RelativeDocumentMoniker": "vendion.core\\Services\\VehicleService.cs",
               "ToolTip": "C:\\projectos\\vendion-backend\\vendion.core\\Services\\VehicleService.cs",
               "RelativeToolTip": "vendion.core\\Services\\VehicleService.cs",
-              "ViewState": "AQIAAA8AAAAAAAAAAAAgwB4AAAAIAAAA",
+              "ViewState": "AQIAAEAAAAAAAAAAAADgv04AAAAlAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-06T13:16:14.754Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "vehicleController.cs",
               "DocumentMoniker": "C:\\projectos\\vendion-backend\\vendio-backend\\Controllers\\vehicleController.cs",
               "RelativeDocumentMoniker": "vendio-backend\\Controllers\\vehicleController.cs",
               "ToolTip": "C:\\projectos\\vendion-backend\\vendio-backend\\Controllers\\vehicleController.cs",
               "RelativeToolTip": "vendio-backend\\Controllers\\vehicleController.cs",
-              "ViewState": "AQIAACIAAAAAAAAAAAAMwC4AAAAJAAAA",
+              "ViewState": "AQIAAC0BAAAAAAAAAAAuwDUBAABJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-05T18:03:39.534Z",
               "EditorCaption": ""
@@ -140,7 +139,7 @@
               "RelativeDocumentMoniker": "vendio-backend\\Controllers\\UserController.cs",
               "ToolTip": "C:\\projectos\\vendion-backend\\vendio-backend\\Controllers\\UserController.cs",
               "RelativeToolTip": "vendio-backend\\Controllers\\UserController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAeAAAA",
+              "ViewState": "AQIAAA4AAAAAAAAAAAApwBgAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-05T17:42:30.079Z",
               "EditorCaption": ""
@@ -155,8 +154,7 @@
               "RelativeToolTip": "vendion.data\\Models\\vendionContext.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAqwA4AAAAWAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-06T13:22:33.343Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-06T13:22:33.343Z"
             },
             {
               "$type": "Document",
@@ -168,8 +166,7 @@
               "RelativeToolTip": "vendion.data\\Models\\favoriteVehiclesMapping.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAqwAkAAAAhAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-06T13:22:05.592Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-06T13:22:05.592Z"
             },
             {
               "$type": "Document",
@@ -181,8 +178,7 @@
               "RelativeToolTip": "vendio-backend\\Controllers\\photosController.cs",
               "ViewState": "AQIAAGYAAAAAAAAAAAAmwIEAAAARAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-06T13:20:08.054Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-06T13:20:08.054Z"
             },
             {
               "$type": "Document",
@@ -194,8 +190,7 @@
               "RelativeToolTip": "vendio-backend\\Program.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAABBAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-05T17:44:35.066Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-05T17:44:35.066Z"
             },
             {
               "$type": "Document",
@@ -207,8 +202,7 @@
               "RelativeToolTip": "vendion.data\\Models\\User.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-06T13:37:53.271Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-06T13:37:53.271Z"
             },
             {
               "$type": "Document",
@@ -220,34 +214,31 @@
               "RelativeToolTip": "vendion.data\\Models\\photo.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAhAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-06T13:20:54.937Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-06T13:20:54.937Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 11,
-              "Title": "vendio-backend",
+              "Title": "vendio-backend.csproj",
               "DocumentMoniker": "C:\\projectos\\vendion-backend\\vendio-backend\\vendio-backend.csproj",
               "RelativeDocumentMoniker": "vendio-backend\\vendio-backend.csproj",
               "ToolTip": "C:\\projectos\\vendion-backend\\vendio-backend\\vendio-backend.csproj",
               "RelativeToolTip": "vendio-backend\\vendio-backend.csproj",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-09-06T13:19:56.763Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-06T13:19:56.763Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 12,
-              "Title": "vendion.core",
+              "Title": "vendion.core.csproj",
               "DocumentMoniker": "C:\\projectos\\vendion-backend\\vendion.core\\vendion.core.csproj",
               "RelativeDocumentMoniker": "vendion.core\\vendion.core.csproj",
               "ToolTip": "C:\\projectos\\vendion-backend\\vendion.core\\vendion.core.csproj",
               "RelativeToolTip": "vendion.core\\vendion.core.csproj",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-09-06T13:16:26.19Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-06T13:16:26.19Z"
             },
             {
               "$type": "Document",
@@ -258,8 +249,7 @@
               "ToolTip": "C:\\projectos\\vendion-backend\\vendio-backend\\vendio-backend.csproj",
               "RelativeToolTip": "vendio-backend\\vendio-backend.csproj",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-09-06T13:15:18.844Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-06T13:15:18.844Z"
             },
             {
               "$type": "Document",
@@ -271,8 +261,7 @@
               "RelativeToolTip": "vendio-backend\\Dtos\\newVehicleDto.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAeAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-05T18:01:29.775Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-05T18:01:29.775Z"
             },
             {
               "$type": "Document",
@@ -284,8 +273,7 @@
               "RelativeToolTip": "vendio-backend\\appsettings.Development.json",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-09-05T17:45:08.949Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-05T17:45:08.949Z"
             },
             {
               "$type": "Document",
@@ -297,8 +285,7 @@
               "RelativeToolTip": "vendio-backend\\appsettings.json",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAVAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-09-05T17:45:00.073Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-05T17:45:00.073Z"
             }
           ]
         }

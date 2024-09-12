@@ -303,8 +303,15 @@ namespace vendio_backend.Controllers
             List<VehicleBrand> response = _vehicleService.getAllBrandsAsync();
             return Ok(response);
         }
-
         
+        [HttpGet("models/{makeId}")]
+        public async Task<IActionResult> GetModels(int makeId)
+        {
+            List<VehicleModel> response = await _vehicleService.getModelByBrandIdAsync(makeId);
+            return Ok(response);
+        }
+
+
     }
 }
 

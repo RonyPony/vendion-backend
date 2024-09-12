@@ -1,0 +1,15 @@
+C:\projectos\vendion-backend\vendion.data\bin\Release\net6.0\vendion.data.deps.json
+C:\projectos\vendion-backend\vendion.data\bin\Release\net6.0\vendion.data.runtimeconfig.json
+C:\projectos\vendion-backend\vendion.data\bin\Release\net6.0\vendion.data.dll
+C:\projectos\vendion-backend\vendion.data\bin\Release\net6.0\vendion.data.pdb
+C:\projectos\vendion-backend\vendion.data\obj\Release\net6.0\vendion.data.csproj.AssemblyReference.cache
+C:\projectos\vendion-backend\vendion.data\obj\Release\net6.0\vendion.data.GeneratedMSBuildEditorConfig.editorconfig
+C:\projectos\vendion-backend\vendion.data\obj\Release\net6.0\vendion.data.AssemblyInfoInputs.cache
+C:\projectos\vendion-backend\vendion.data\obj\Release\net6.0\vendion.data.AssemblyInfo.cs
+C:\projectos\vendion-backend\vendion.data\obj\Release\net6.0\vendion.data.csproj.CoreCompileInputs.cache
+C:\projectos\vendion-backend\vendion.data\obj\Release\net6.0\vendion.data.sourcelink.json
+C:\projectos\vendion-backend\vendion.data\obj\Release\net6.0\vendion.data.dll
+C:\projectos\vendion-backend\vendion.data\obj\Release\net6.0\refint\vendion.data.dll
+C:\projectos\vendion-backend\vendion.data\obj\Release\net6.0\vendion.data.pdb
+C:\projectos\vendion-backend\vendion.data\obj\Release\net6.0\vendion.data.genruntimeconfig.cache
+C:\projectos\vendion-backend\vendion.data\obj\Release\net6.0\ref\vendion.data.dll
